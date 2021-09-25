@@ -1,9 +1,18 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-const contactSchema = mongoose.Schema({
-    
+const contactSchema = new mongoose.Schema({
+    Name:{
+        type:String,
+        require:true
+    },
+    Contact:{
+        type:String,
+        require:true,
+    }
 })
-const getContact=()=>{
-    
+const getContactDB=(userId)=>{
+    const userContact = mongoose.model(`${userId}`,contactSchema);
+    return userContact;
 }
-export default getContact;
+
+module.exports = getContactDB;
