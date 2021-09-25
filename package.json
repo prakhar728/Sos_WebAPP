@@ -1,0 +1,22 @@
+{
+  "name": "sos_webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prakhar728/Sos_WebAPP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prakhar728/Sos_WebAPP/issues"
+  },
+  "homepage": "https://github.com/prakhar728/Sos_WebAPP#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
