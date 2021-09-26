@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+/* font-family: 'Source Sans Pro', sans-serif; */
+
+
+/*----------GLOBAL CSS----------*/
+
+
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+/* html { 
+	-webkit-font-smoothing: antialiased; 
+	overflow-y: scroll;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+} */
+body::-webkit-scrollbar { 
+	display: none 
+}
+
+ul { 
+	list-style: none 
+}
+
+img { 
+	width: 100% 
+}
+
+label, input[type=button], input[type=submit], button { 
+	cursor: pointer 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+article{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+
+/*----------PSUDO CLASSES----------*/
+
+
+
+:root {
+	--primary-color: #7F38EC;
+	--primary-color-opacity: rgba(127, 54, 236, 0.4);
+
+	--google-red-color: rgb(219, 68, 55);
+	--google-red-color-opacity: rgba(219, 69, 55, 0.4);
+
+    --border-color: rgb(200, 200, 200);
+	--background-color: #F7F8FA;
+
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+
+
+/*----------UTILITY CLASSES----------*/
+
+
+
+.container {
+	max-width: 1200px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin:0 auto;
+}
+
+.link-hover:hover{
+	color: var(--primary-color);
+	font-weight: 500;
+	transition: 0.4s ease-out;
+}
+
+button.normal-btn{
+	background-color: none;
+	outline: none;
+	border: none;
+}
+
+.contact-section-open,
+.open-pop-up,
+.desktop {
+	display: block;
+}
+.contact-section-close,
+.close-pop-up,
+.mobile {
+	display: none;
+}
+@media(max-width: 700px){
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+}
+@media(min-width: 700px) {
+	.contact-section-close{
+		display: block;
+	}
+}
+
+
+
+/* Button Styling */
+
+
+
+.btn-container {
+	text-align: center;
+}
+.btn{
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 14px 16px;
+	border-radius: 5px;
+	outline: none;
+	width: 300px;
+}
+
+.btn-2{
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 14px 16px;
+	border-radius: 5px;
+	outline: none;
+}
+.primary-btn {
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	border: var(--primary-color) 2px solid;
+}
+.primary-btn:hover {
+	color: var(--black-color);
+	background-color: var(--primary-color-opacity);
+	transition: 0.4s ease-out;
+}
+
+.secondary-btn {
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	border: var(--primary-color) 2px solid;
+}
+
+.google-btn {
+	color: var(--white-color);
+	background-color: var(--google-red-color);
+	border: var(--google-red-color) 2px solid;
+}
+.google-btn:hover {
+	color: var(--black-color);
+	background-color: var(--google-red-color-opacity);
+	transition: 0.4s ease-out;
+}
+
+
+
+/*----------ID'S CLASSES----------*/
+
+
+
+/* Signup or Login */
+
+
+
+main article.Signup, .Login {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main article.Signup .signup-grid,
+main article.Login .login-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	justify-self: center;
+	justify-items: center;
+	align-items: center;
+	align-self: center;
+	align-content: center;
+}
+main article.Signup .signup-grid .sketch {
+	height: 400px;
+	width: 400px;
+	background-image: url('./assets/images/sos.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	margin: 10px;
+}
+main article.Login .login-grid .sketch{
+	height: 400px;
+	width: 400px;
+	background-image: url('./assets/images/sos.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	margin: 10px;
+}
+main article.Signup .signup-grid .signup-card,
+main article.Login .login-grid .login-card {
+	height: 100%;
+	width: 100%;
+}
+main article.Signup .signup-grid .signup-card h1,
+main article.Login .login-grid .login-card h1 {
+	text-align: center;
+	font-size: 36px;
+	font-weight: 700;
+	padding: 32px 0;
+}
+main article.Signup .signup-grid .signup-card div,
+main article.Login .login-grid .login-card div {
+	padding: 8px 0;
+}
+main article.Signup .signup-grid .signup-card div label,
+main article.Login .login-grid .login-card div label {
+	font-size: 14px;
+	padding: 4px 0; 
+}
+main article.Signup .signup-grid .signup-card div input,
+main article.Login .login-grid .login-card div input {
+	font-size: 16px;
+	border: var(--border-color) 1px solid;
+	border-radius: 5px;
+	padding: 16px;
+	width: 100%;
+}
+main article.Signup .signup-grid .signup-card div input:active,
+main article.Login .login-grid .login-card div input:active,
+main article.Signup .signup-grid .signup-card div input:focus,
+main article.Login .login-grid .login-card div input:focus{
+	border: var(--primary-color) 1px solid;
+}
+
+
+@media(max-width: 1000px){
+	main article.Signup .signup-grid,
+	main article.Login .login-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+
+/* Error */
+
+
+
+main article.Error{
+	display: flex;
+	justify-content: center;
+	justify-self: center;
+	justify-items: center;
+	align-items: center;
+	align-self: center;
+	align-content: center;
+	text-align: center;
+	height: 100vh;
+	width: 100%;
+}
+main article.Error .sketch{
+	width: 400px;
+	height: 400px;
+	background-image: url('./assets/images/404.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+main article.Error p {
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+@media (max-width: 500px) {
+	main article.Error .sketch{
+		width: 300px;
+		height: 300px;
+	}
+}
+
+
+/* Home */
+
+
+main article.Home {
+	height: 100vh;
+	width: 100vw;
+}
+main article.Home section{
+	width: 100vw;
+	height: 100vh;
+}
+
+
+/* Side Bar */ 
+
+
+main article.Home section #Contact-Section{
+	position: fixed;
+	z-index: 1;
+	width: 375px;
+	height: 100%;
+	background-color: var(--background-color);
+	margin: 10px;
+	border-radius: 16px;
+}
+main article.Home section #Contact-Section .add-btn-container {
+	position: relative;
+	width: 100%;
+}
+main article.Home section #Contact-Section .add-btn-container h1 {
+	text-align: center;
+	font-size: 24px;
+	padding: 24px 0;
+}
+main article.Home section #Contact-Section .add-btn-container .add-btn {
+	position: absolute;
+	top: 0px;
+	right: 0%;
+	margin: 10px;
+	padding: 14px 16px;
+	border-radius: 5px;
+	outline: none;
+	background-color: var(--primary-color);
+	color: var(--white-color);
+}
+main article.Home section #Contact-Section .contacts {
+	padding: 16px;
+	overflow-y: scroll;
+}
+main article.Home section #Contact-Section .contacts .contact-card {
+	width: 100%;
+	color: var(--black-color);
+	background-color: var(--white-color);
+	padding: 16px;
+	margin: 8px 0;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+main article.Home section #Contact-Section .contacts .contact-card figure.contact-image{
+	font-size: 16px;
+	color: var(--black-color);
+
+} 
+main article.Home section #Contact-Section .contacts .contact-card .info {
+	padding: 0 4px;
+}
+main article.Home section #Contact-Section .contacts .contact-card .info p.name{
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+
+/* Main Section */
+
+
+main article.Home section .main-section {
+	margin-left: 375px;
+	height: 100vh;
+}
+main article.Home section .main-section .send-sos {
+	display: flex;
+	justify-content: center;
+	justify-self: center;
+	justify-items: center;
+	align-items: center;
+	align-self: center;
+	align-content: center;
+	height: 100%;
+	width: 100%;
+}
+main article.Home section .main-section .send-sos button {
+	background-color: var(--google-red-color);
+	color: var(--white-color);
+	font-size: 42px;
+	padding: 60px 50px;
+	border-radius: 50%;
+}
+
+/* Add Conacts */ 
+
+main article.Home section #Add-Contact {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+}
+main article.Home section #Add-Contact .card{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+main article.Home section #Add-Contact .card .card-content{
+	background-color: var(--white-color);
+	padding: 16px;
+	border-radius: 10px;
+	width: auto;
+}
+main article.Home section #Add-Contact .card .card-content form div {
+	display: block;
+	padding: 8px;
+}
+main article.Home section #Add-Contact .card .card-content form div label {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+}
+main article.Home section #Add-Contact .card .card-content form div input {
+	display: block;
+	font-size: 16px;
+	border: var(--border-color) 1px solid;
+	border-radius: 5px;
+	padding: 16px;
+	width: 100%;
+}
+
+
+@media (max-width: 700px) {
+	
+	
+	/* Side Bar */ 
+
+
+	main article.Home section #Contact-Section{
+		position: fixed;
+		top: 50vh;
+		left: 0;
+		margin: 0 auto;
+		z-index: 1;
+		width: 375px;
+		height: 50vh;
+		background-color: var(--background-color);
+		margin: 10px;
+		border-radius: 16px;
+	}
+	main article.Home section #Contact-Section .add-btn-container {
+		position: relative;
+		width: 100%;
+	}
+	main article.Home section #Contact-Section .add-btn-container h1 {
+		text-align: center;
+		font-size: 24px;
+		padding: 24px 0;
+	}
+	main article.Home section #Contact-Section .add-btn-container .add-btn {
+		position: absolute;
+		top: 0px;
+		right: 0%;
+		margin: 10px;
+		padding: 14px 16px;
+		border-radius: 5px;
+		outline: none;
+		background-color: var(--primary-color);
+		color: var(--white-color);
+	}
+	main article.Home section #Contact-Section .contacts {
+		padding: 16px;
+		overflow-y: scroll;
+	}
+	main article.Home section #Contact-Section .contacts .contact-card {
+		width: 100%;
+		color: var(--black-color);
+		background-color: var(--white-color);
+		padding: 16px;
+		margin: 8px 0;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	main article.Home section #Contact-Section .contacts .contact-card figure.contact-image{
+		font-size: 16px;
+		color: var(--black-color);
+
+	} 
+	main article.Home section #Contact-Section .contacts .contact-card .info {
+		padding: 0 4px;
+	}
+	main article.Home section #Contact-Section .contacts .contact-card .info p.name{
+		text-align: center;
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+
+	/* Main Section */
+
+
+	main article.Home section .main-section {
+		margin-left: 0;
+		height: 100vh;
+		position: relative;
+	}
+	main article.Home section .main-section #Contacts-Btn{
+		position: absolute;
+		bottom: 0px;
+		margin: 0 auto;
+		width: 100%;
+	}
+}
