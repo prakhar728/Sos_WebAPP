@@ -1,4 +1,7 @@
 import ContactCard from '../props/ContactCard';
+import { useEffect, useState } from 'react';
+
+const axios = require('axios');
 
 const handleOpenAddContact = () => {
     const element = document.getElementById('Add-Contact');
@@ -18,6 +21,20 @@ const handleCloseContact = () => {
 }
 
 const Home = () => {
+
+    const [contacts, setcontacts] = useState(null);
+
+    useEffect(() => {
+        axios.get('/user?ID=12345')
+        .then((response) => {
+            setcontacts(response["data"]);
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }, []);
+
     return ( 
         <article className="Home">   
             <section>  
@@ -32,16 +49,11 @@ const Home = () => {
                         <h1>Contacts</h1>
                         <button onClick={handleOpenAddContact} className="add-btn"><i className="fa fa-plus" aria-hidden="true"></i></button>
                     </div>
-                    <div className="contacts">
-                        <ContactCard/>    
-                        <ContactCard/>
-                        <ContactCard/>
-                        <ContactCard/>
-                        <ContactCard/>
-                        <ContactCard/>
-                        <ContactCard/>
-                        <ContactCard/>
-                    </div>
+                    {/* <div className="contacts">
+                        {contacts.map((eachContact)=>(
+                            <ContactCard name={eachContact.name}/>
+                        ))}
+                    </div> */}
                 </div>
 
                 {/* Main Section */}

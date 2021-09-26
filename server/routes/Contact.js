@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const getModel= require('../models/Contacts');
 router.get('/getContacts',async (req,res)=>{
-  
     const userId = req.headers.userid;
     const contactModel = getModel(userId);
     const data = await contactModel.find({});
@@ -24,5 +23,17 @@ router.post('/postContacts',async (req,res)=>{
         console.log(error);
     }
 })
+router.delete('/deleteContact', async (req,res)=>{
+    const userId= req.body.userId;
+    const contactModel = getModel(userId);
+    const contactTobeDeleted = req.body.contact;
+    try {
+        await contactModel.deleteOne({Contact:contactTobeDeleted});
+        res.send('Succesfully Deleted');
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 
 module.exports = router;

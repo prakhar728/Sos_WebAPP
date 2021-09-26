@@ -8,12 +8,8 @@ const Login = () => {
                 <div className="login-card">
                     <h1>Log In</h1>
                     <div>
-                        <label>Email Address : </label>
-                        <div><input type="email" name="email"/></div>
-                    </div>
-                    <div>
-                        <label>Password : </label>
-                        <div><input type="password" name="password"/></div>
+                        <label>Phone Number : </label>
+                        <div><input type="number" name="number"/></div>
                     </div>
                     <div style={{paddingTop: '24px'}}>
                         <p>Don't have an account? <Link to="/signup"><u className="link-hover">Create New Account</u></Link></p>

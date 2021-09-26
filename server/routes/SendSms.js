@@ -14,7 +14,7 @@ const sendSMS = (message, toWho) => {
         .then(message => {
             console.log(message);
             console.log(message.sid);
-            console.log('Messaeg');
+            console.log('Message');
         })
         .catch(errr=>console.log(errr))
 }
